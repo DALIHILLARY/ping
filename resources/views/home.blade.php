@@ -50,7 +50,7 @@
                                         <td>{{ $domain->latestLog->response_time }}</td>
                                         <td>
                                             <!-- Get time ago -->
-                                            {{ $domain->latestLog->created_at->diffForHumans() }}
+                                            {{ $domain->latestLog->updated_at->diffForHumans() }}
                                         </td>
                                     </tr>
                                 @endif
