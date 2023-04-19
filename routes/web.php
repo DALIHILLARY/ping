@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Auth::routes([
+    'register' => false,
+]);
 
 Route::resource('domains', App\Http\Controllers\DomainController::class);
