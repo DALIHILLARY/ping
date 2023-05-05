@@ -11,6 +11,7 @@ use App\Models\MonitorLog;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\DomainDown;
 use App\Mail\DomainUp;
+use App\Mail\SSLIssue;
 use Error;
 use Throwable;
 
@@ -71,13 +72,13 @@ class Kernel extends ConsoleKernel
 
                             if ($status_code == MonitorLog::STATUS_DOWN) {
                                 //mail all persons responsible for this domain
-
                                 Mail::to($emails)->send(new DomainDown($domain->url));
-                            }
-                            if ($status_code != MonitorLog::STATUS_DOWN) {
-                                //mail all persons responsible for this domain
+                            }else if( $status_code == MonitorLog::STATUS_SSL_ERROR) {
+                                Mail::to($emails)->send(new SSLIssue($domain->url));
+                            }else {
                                 Mail::to($emails)->send(new DomainUp($domain->url));
                             }
+
                         }
                     }
                 }
