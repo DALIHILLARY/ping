@@ -18,9 +18,9 @@ class ComposerStaticInit857bf664bbb09ed59a49585a3571c6c6
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
+        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '09f6b20656683369174dd6fa83b7e5fb' => __DIR__ . '/..' . '/symfony/polyfill-uuid/bootstrap.php',
-        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'e23faeee409e941dc9b4c80386209c39' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/functions.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
@@ -36,6 +36,7 @@ class ComposerStaticInit857bf664bbb09ed59a49585a3571c6c6
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
+        '6576cecdc0cf89139d7b600c9ffaa124' => __DIR__ . '/..' . '/spatie/ssl-certificate/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -84,6 +85,8 @@ class ComposerStaticInit857bf664bbb09ed59a49585a3571c6c6
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\SslCertificate\\' => 22,
+            'Spatie\\Macroable\\' => 17,
             'Spatie\\LaravelIgnition\\' => 23,
             'Spatie\\Ignition\\' => 16,
             'Spatie\\FlareClient\\' => 19,
@@ -320,6 +323,14 @@ class ComposerStaticInit857bf664bbb09ed59a49585a3571c6c6
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Spatie\\SslCertificate\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/ssl-certificate/src',
+        ),
+        'Spatie\\Macroable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/macroable/src',
         ),
         'Spatie\\LaravelIgnition\\' => 
         array (
@@ -591,6 +602,7 @@ class ComposerStaticInit857bf664bbb09ed59a49585a3571c6c6
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DomainController' => __DIR__ . '/../..' . '/app/Http/Controllers/DomainController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\TeamController' => __DIR__ . '/../..' . '/app/Http/Controllers/TeamController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -602,8 +614,12 @@ class ComposerStaticInit857bf664bbb09ed59a49585a3571c6c6
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Requests\\CreateDomainRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateDomainRequest.php',
+        'App\\Http\\Requests\\CreateTeamRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CreateTeamRequest.php',
         'App\\Http\\Requests\\UpdateDomainRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateDomainRequest.php',
+        'App\\Http\\Requests\\UpdateTeamRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateTeamRequest.php',
         'App\\Models\\Domain' => __DIR__ . '/../..' . '/app/Models/Domain.php',
+        'App\\Models\\MonitorLog' => __DIR__ . '/../..' . '/app/Models/MonitorLog.php',
+        'App\\Models\\Team' => __DIR__ . '/../..' . '/app/Models/Team.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -728,6 +744,7 @@ class ComposerStaticInit857bf664bbb09ed59a49585a3571c6c6
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\DomainFactory' => __DIR__ . '/../..' . '/database/factories/DomainFactory.php',
+        'Database\\Factories\\TeamFactory' => __DIR__ . '/../..' . '/database/factories/TeamFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
@@ -5282,6 +5299,16 @@ class ComposerStaticInit857bf664bbb09ed59a49585a3571c6c6
         'Spatie\\LaravelIgnition\\Support\\StringComparator' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Support/StringComparator.php',
         'Spatie\\LaravelIgnition\\Views\\BladeSourceMapCompiler' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Views/BladeSourceMapCompiler.php',
         'Spatie\\LaravelIgnition\\Views\\ViewExceptionMapper' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Views/ViewExceptionMapper.php',
+        'Spatie\\Macroable\\Macroable' => __DIR__ . '/..' . '/spatie/macroable/src/Macroable.php',
+        'Spatie\\SslCertificate\\Downloader' => __DIR__ . '/..' . '/spatie/ssl-certificate/src/Downloader.php',
+        'Spatie\\SslCertificate\\Exceptions\\CouldNotDownloadCertificate' => __DIR__ . '/..' . '/spatie/ssl-certificate/src/Exceptions/CouldNotDownloadCertificate.php',
+        'Spatie\\SslCertificate\\Exceptions\\CouldNotDownloadCertificate\\HostDoesNotExist' => __DIR__ . '/..' . '/spatie/ssl-certificate/src/Exceptions/CouldNotDownloadCertificate/HostDoesNotExist.php',
+        'Spatie\\SslCertificate\\Exceptions\\CouldNotDownloadCertificate\\NoCertificateInstalled' => __DIR__ . '/..' . '/spatie/ssl-certificate/src/Exceptions/CouldNotDownloadCertificate/NoCertificateInstalled.php',
+        'Spatie\\SslCertificate\\Exceptions\\CouldNotDownloadCertificate\\UnknownError' => __DIR__ . '/..' . '/spatie/ssl-certificate/src/Exceptions/CouldNotDownloadCertificate/UnknownError.php',
+        'Spatie\\SslCertificate\\Exceptions\\InvalidIpAddress' => __DIR__ . '/..' . '/spatie/ssl-certificate/src/Exceptions/InvalidIpAddress.php',
+        'Spatie\\SslCertificate\\Exceptions\\InvalidUrl' => __DIR__ . '/..' . '/spatie/ssl-certificate/src/Exceptions/InvalidUrl.php',
+        'Spatie\\SslCertificate\\SslCertificate' => __DIR__ . '/..' . '/spatie/ssl-certificate/src/SslCertificate.php',
+        'Spatie\\SslCertificate\\Url' => __DIR__ . '/..' . '/spatie/ssl-certificate/src/Url.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\Attribute\\AsCommand' => __DIR__ . '/..' . '/symfony/console/Attribute/AsCommand.php',

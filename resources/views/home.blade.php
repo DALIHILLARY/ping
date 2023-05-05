@@ -25,7 +25,8 @@
                             <tr>
                                 <th>NAME</th>
                                 <th>ONLINE</th>
-                                <th>SSL/TLS</th>
+                     {{-- <td>{{ $domain->latestLog->status_code }}</td> --}}
+                                        {{-- <td>{{ $domain->latestLog->response_time }}</td> --}}                    <th>SSL/TLS</th>
                                 {{-- <th>UPTIME</th> --}}
                                 <th>RESPONSE TIME (ms)</th>
                                 <th>LAST CHECKED</th>
@@ -35,7 +36,8 @@
                             @forelse($domains as $domain)
                                 @if ($domain->latestLog != null)
                                     <tr>
-                                        <td>{{ $domain->name }}</td>
+                                        <td><a href="{{ route('domains.show', [$domain->id]) }}">{{ $domain->name }}</a></td>
+                            
                                         @if($domain->latestLog->status_code == 200)
                                             <td><i class="fas fa-check-circle text-success"></i></td>
                                             <td><i class="fas fa-check-circle text-success"></i></td>

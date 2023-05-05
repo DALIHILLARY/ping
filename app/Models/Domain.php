@@ -56,4 +56,8 @@ class Domain extends Model
     {
         return $this->hasOne(MonitorLog::class)->latestOfMany();
     }
+
+    public function team() {
+        return $this->hasMany(Team::class);
+    }
 }
