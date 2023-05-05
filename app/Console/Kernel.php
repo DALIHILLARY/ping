@@ -22,49 +22,48 @@ class Kernel extends ConsoleKernel
     {
         $schedule->call(function () {
             //fectch all domains randomly
-            $domains = Domain::where('enabled',1)->inRandomOrder()->get();
+            $domains = Domain::where('enabled', 1)->inRandomOrder()->get();
 
             foreach ($domains as $domain) {
                 //strip protocol from url https or http
                 $domain->url = preg_replace('#^https?://#', '', $domain->url);
                 $start_time = microtime(true);
                 $status_code = 0;
-                try{
-                    Http::withOptions(['verify' => true])->get('http://'.$domain->url);
+                try {
+                    Http::withOptions(['verify' => true])->get('http://' . $domain->url);
                     $status_code = MonitorLog::STATUS_UP;
-                }
-                catch(\Exception $e){
-                    if(Str::contains($e->getMessage(), 'SSL certificate problem')){
+                } catch (\Exception $e) {
+                    if (Str::contains($e->getMessage(), 'SSL certificate problem')) {
                         $status_code = MonitorLog::STATUS_SSL_ERROR;
                     }
-                    if(Str::contains($e->getMessage(), 'Could not resolve host')){
+                    if (Str::contains($e->getMessage(), 'Could not resolve host')) {
                         $status_code = MonitorLog::STATUS_DOWN;
                     }
                 }
                 $end_time = microtime(true);
                 $response_time = round(($end_time - $start_time) * 1000);
-        
-                MonitorLog::updateOrCreate(
-                    [
-                        'domain_id' => $domain->id,
-                        'status_code' => $status_code,
-                    ],
-                    [
-                        'url' => $domain->url,
+
+                // check if last log from this domain has the same status code else create new log
+                $latest_log = $domain->latestLog()->where('status_code', $status_code)->first();
+                if ($latest_log) {
+                    $latest_log->update([
+                        'response_time' => $response_time
+                    ]);
+                } else {
+                    MonitorLog::create([
                         'domain_id' => $domain->id,
                         'status_code' => $status_code,
                         'response_time' => $response_time
-                    ]
-                );
-                
-                if($status_code != MonitorLog::STATUS_UP){
+                    ]);
+                }
+
+                if ($status_code != MonitorLog::STATUS_UP) {
                     //mail all persons responsible for this domain
-                    
-    
+
+
                 }
             }
-           })->everyFiveMinutes()->name('domain_monitor')->withoutOverlapping();
-
+        })->everyFiveMinutes()->name('domain_monitor')->withoutOverlapping();
     }
 
     /**
@@ -74,7 +73,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }
