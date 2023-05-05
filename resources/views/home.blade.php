@@ -30,13 +30,14 @@
                                 {{-- <th>UPTIME</th> --}}
                                 <th>RESPONSE TIME (ms)</th>
                                 <th>LAST CHECKED</th>
+                                <th>ACTIONS</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse($domains as $domain)
                                 @if ($domain->latestLog != null)
                                     <tr>
-                                        <td><a href="{{ route('domains.show', [$domain->id]) }}">{{ $domain->name }}</a></td>
+                                        <td><a href="{{ $domain->url }}" target="_blank">{{ $domain->name }}</a></td>
                             
                                         @if($domain->latestLog->status_code == 200)
                                             <td><i class="fas fa-check-circle text-success"></i></td>
@@ -53,6 +54,11 @@
                                         <td>
                                             <!-- Get time ago -->
                                             {{ $domain->latestLog->updated_at->diffForHumans() }}
+                                        </td>
+                                        <td>
+                                            <div class='btn-group'>
+                                                <a href="{{ route('domains.show', [$domain->id]) }}" class='btn btn-default btn-xs'><i class="fas fa-eye"></i></a>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endif
