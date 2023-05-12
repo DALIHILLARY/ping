@@ -18,7 +18,7 @@ class MaintainerController extends AppBaseController
     public function index(Request $request)
     {
         /** @var Maintainer $maintainers */
-        $maintainers = Maintainer::latest()->with('domains')->paginate(10);
+        $maintainers = Maintainer::with('domains')->latest()->paginate(10);
 
         return view('maintainers.index')
             ->with('maintainers', $maintainers);
