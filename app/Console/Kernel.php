@@ -39,7 +39,7 @@ class Kernel extends ConsoleKernel
                     $start_time = microtime(true);
                     $status_code = 0;
                     try {
-                        zHttp::withOptions(['verify' => true])->get('http://' . $domain->url);
+                        Http::withOptions(['verify' => true])->get('http://' . $domain->url);
                         $status_code = MonitorLog::STATUS_UP;
                     } catch (\Exception $e) {
                         if (Str::contains($e->getMessage(), 'SSL certificate problem')) {
