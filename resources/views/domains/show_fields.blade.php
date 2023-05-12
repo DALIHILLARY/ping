@@ -22,7 +22,7 @@
 
 <!-- Domain Team Table -->
 <div class="col-sm-12">
-    {!! Form::label('team', 'Team:') !!}
-    @include('teams.table', ['teams' => $domain->team()->paginate()])
+    {!! Form::label('maintainers', 'Maintainers:') !!}
+    @include('maintainers.table', ['maintainers' => $domain->maintainers()->paginate()])
 </div>
 

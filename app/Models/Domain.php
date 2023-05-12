@@ -10,6 +10,7 @@ class Domain extends Model
 
     const STATUS_UP = 200;
     const STATUS_DOWN = 0;
+    const STATUS_SERVER_ERROR = 500;
     const STATUS_SSL_ERROR = -1;
 
 
@@ -57,7 +58,8 @@ class Domain extends Model
         return $this->hasOne(MonitorLog::class)->latestOfMany();
     }
 
-    public function team() {
-        return $this->hasMany(Team::class);
+    public function maintainers()
+    {
+        return $this->belongsToMany(Maintainer::class)->withTimestamps();
     }
 }

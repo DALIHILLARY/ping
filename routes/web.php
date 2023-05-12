@@ -37,3 +37,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('teams', App\Http\Controllers\TeamController::class);
 
 });
+Route::resource('maintainers', App\Http\Controllers\MaintainerController::class);

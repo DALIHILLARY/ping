@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1>
-                        Edit Team
+                        Edit Maintainer
                     </h1>
                 </div>
             </div>
@@ -19,17 +19,17 @@
 
         <div class="card">
 
-            {!! Form::model($team, ['route' => ['teams.update', $team->id], 'method' => 'patch']) !!}
+            {!! Form::model($maintainer, ['route' => ['maintainers.update', $maintainer->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
                 <div class="row">
-                    @include('teams.fields')
+                    @include('maintainers.fields')
                 </div>
             </div>
 
             <div class="card-footer">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('teams.index') }}" class="btn btn-default"> Cancel </a>
+                <a href="{{ route('maintainers.index') }}" class="btn btn-default"> Cancel </a>
             </div>
 
             {!! Form::close() !!}

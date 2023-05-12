@@ -17,7 +17,7 @@ class DomainController extends AppBaseController
     public function index(Request $request)
     {
         /** @var Domain $domains */
-        $domains = Domain::paginate(10);
+        $domains = Domain::latest()->paginate(10);
 
         return view('domains.index')
             ->with('domains', $domains);

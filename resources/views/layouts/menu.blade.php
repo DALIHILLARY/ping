@@ -14,8 +14,8 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('teams.index') }}" class="nav-link {{ Request::is('teams*') ? 'active' : '' }}">
+    <a href="{{ route('maintainers.index') }}" class="nav-link {{ Request::is('maintainers*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-users"></i>
-        <p>Teams</p>
+        <p>Maintainers</p>
     </a>
 </li>

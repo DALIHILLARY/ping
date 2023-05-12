@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('teams', function (Blueprint $table) {
+        Schema::create('maintainers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->foreignId('domain_id')->constrained('domains')->onDelete('cascade');
-            $table->string('contact_number');
+            $table->string('phone_number');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('teams');
+        Schema::dropIfExists('maintainers');
     }
 };

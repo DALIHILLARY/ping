@@ -39,7 +39,7 @@ class Kernel extends ConsoleKernel
                     $start_time = microtime(true);
                     $status_code = 0;
                     try {
-                        Http::withOptions(['verify' => true])->get('http://' . $domain->url);
+                        zHttp::withOptions(['verify' => true])->get('http://' . $domain->url);
                         $status_code = MonitorLog::STATUS_UP;
                     } catch (\Exception $e) {
                         if (Str::contains($e->getMessage(), 'SSL certificate problem')) {
@@ -78,7 +78,6 @@ class Kernel extends ConsoleKernel
                             }else {
                                 Mail::to($emails)->send(new DomainUp($domain->url));
                             }
-
                         }
                     }
                 }
