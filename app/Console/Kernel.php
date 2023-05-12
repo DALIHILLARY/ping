@@ -65,7 +65,7 @@ class Kernel extends ConsoleKernel
                             'response_time' => $response_time
                         ]);
 
-                        $emails = $domain->team()->pluck('email')->toArray();
+                        $emails = $domain->maintainers->pluck('email')->toArray();
 
                         //confirm is the system has concerned maintainers
                         if (count($emails) > 0) {
