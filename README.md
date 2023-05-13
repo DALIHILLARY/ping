@@ -27,7 +27,8 @@ git clone https://github.com/DALIHILLARY/ping.git
 
 6. Run the monitor job
     On local environment you can `php artisan schedule:work`
-    On production evironment, set up a cron job per minute as
+    
+    On production environment, set up a cron job per minute as
     `\bin\php \home\{username}\{project-path}\artisan schedule:run`
 ## Usage
 
@@ -41,7 +42,7 @@ To add a maintainer to a domain, go to the `Maintainers` page and click on the `
 
 ### Viewing Domain Uptime
 
-The longs will be displayed on the home page when logged in
+The logs will be displayed on the home page when logged in
 
 ## License
 Ping is open-sourced
