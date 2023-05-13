@@ -1,6 +1,6 @@
 # Ping
 
-Ping is a web application that monitors the uptime of domains and their SSL certificate validity. It allows you to add maintainers to various domains and sends email notifications to them when issues occur.
+Ping is a laravel web application that monitors the uptime of domains and their SSL certificate validity. It allows you to add maintainers to various domains and sends email notifications to them when issues occur.
 
 ## Installation
 
