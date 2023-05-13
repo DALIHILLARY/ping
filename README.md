@@ -17,7 +17,7 @@ git clone https://github.com/DALIHILLARY/ping.git
     `cp .env.example .env
     php artisan key:generate`
 
-Update `.env` with your preferred settings, including the database configuration and email settings.
+    Update `.env` with your preferred settings, including the database configuration and email settings.
 
 4. Run database migrations
     `php artisan migrate`
@@ -26,9 +26,9 @@ Update `.env` with your preferred settings, including the database configuration
     `php artisan serve`
 
 6. Run the monitor job
-On local environment you can `php artisan schedule:work`
-On production evironment, set up a cron job per minute as
-`\bin\php \home\{username}\{project-path}\artisan schedule:run`
+    On local environment you can `php artisan schedule:work`
+    On production evironment, set up a cron job per minute as
+    `\bin\php \home\{username}\{project-path}\artisan schedule:run`
 ## Usage
 
 ### Adding Domains
