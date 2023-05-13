@@ -9,21 +9,21 @@ git clone https://github.com/DALIHILLARY/ping.git
 
 
 2. Install dependencies
-cd laravel-domain-monitor
-composer install
+    `cd ping
+     composer install`
 
 3. Set up environment variables
 
-cp .env.example .env
-php artisan key:generate
+    `cp .env.example .env
+    php artisan key:generate`
 
 Update `.env` with your preferred settings, including the database configuration and email settings.
 
 4. Run database migrations
-php artisan migrate
+    `php artisan migrate`
 
 5. Start the application
-php artisan serve
+    `php artisan serve`
 
 6. Run the monitor job
 On local environment you can `php artisan schedule:work`
